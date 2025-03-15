@@ -1,37 +1,26 @@
 <?php
-function validateMenuType(string $type): bool{
-    $menuTypes = [
-        'header',
-        'footer'
-        
-    ];
-    if(in_array($type, $menuTypes)){
-        return true;
-    }else{
-        return false;
-    };
-};
+function validateMenuType(string $type): bool {
+    $menuTypes = ['header', 'footer'];
+    return in_array($type, $menuTypes);
+}
 
-function getMenuData(string $type): array{
+function getMenuData(string $type): array {
     $menu = [];
-    if(validateMenuType($type)){
-        if($type === 'header'){
-            $json = file_get_contents('menu.json');
-            $data = json_decode($json, true);
-            if(isset($data[$type])){
-                $menu = $data[$type];
-            }
+    if (validateMenuType($type)) {
+        $json = file_get_contents('menu.json');
+        $data = json_decode($json, true);
+        if (isset($data[$type])) {
+            $menu = $data[$type];
         }
-    };
-
-    return $menu;
-};
-
-function printMenu(array $menu){
-    foreach ($menu as $menuName => $menuData){
-        echo '<li><a href="'.$menuData['path'].'">'.$menuData['name'].'</a></li>';
     }
-};
+    return $menu;
+}
+
+function printMenu(array $menu) {
+    foreach ($menu as $menuItem) {
+        echo '<li><a href="' . $menuItem['path'] . '">' . $menuItem['name'] . '</a></li>';
+    }
+}
 
 
 
@@ -60,6 +49,12 @@ function finishPortfolio(){
         }
        echo '</div>';
     }
-}
+};
 
+
+function printQuickLinks(array $menu) {
+    foreach ($menu as $menuItem) {
+        echo '<p><a href="' . $menuItem['path'] . '">' . $menuItem['name'] . '</a></p>';
+    }
+}
 

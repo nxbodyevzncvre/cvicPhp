@@ -16,5 +16,19 @@
             "name": "Kontakt",
             "path": "kontakt.php"
         }
+    ],
+    "footer": [
+        {
+            "name": "Domov",
+            "path": "index.php"
+        },
+        {
+            "name": "QnA",
+            "path": "qna.php"
+        },
+        {
+            "name": "Kontakt",
+            "path": "kontakt.php"
+        }
     ]
 }
