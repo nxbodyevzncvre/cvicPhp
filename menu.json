@@ -1,0 +1,20 @@
+{
+    "header": [
+        {
+            "name": "Domov",
+            "path": "index.php"
+        },
+        {
+            "name": "Portfolio",
+            "path": "portfolio.php"
+        },
+        {
+            "name": "QnA",
+            "path": "qna.php"
+        },
+        {
+            "name": "Kontakt",
+            "path": "kontakt.php"
+        }
+    ]
+}
