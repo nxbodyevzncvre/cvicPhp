@@ -1,28 +1,27 @@
 <?php
 include_once 'functions.php';
 $menu = getMenuData("header");
-echo "<script>console.log(" . json_encode($menu) . ");</script>";
-
-// echo $menu;
-
-$theme = $_GET['theme'];
-
-
+$theme = isset($_GET['theme']) && $_GET['theme'] === 'dark' ? 'dark' : 'light';
 ?>
- <header style = "background-color: <?php echo $theme === "dark" ? "grey" : "white"; ?>" class="container main-header">
+<header class="container main-header <?php echo $theme; ?>">
     <div class="logo-holder">
-        <a href="index.php">
-            <img src="img/logo.png" height="40">
+        <a href="index.php?theme=<?php echo $theme; ?>">
+            <img src="img/logo.png" height="40" alt="Logo">
         </a>
     </div>
     <nav class="main-nav">
         <ul class="main-menu" id="main-menu">
-            <?php printMenu($menu);?>
-
-            <a href="<?php echo $theme === "dark" ? "?theme=light" : "?theme=dark"; ?>">Change theme</a>
+            <?php foreach ($menu as $menuItem): ?>
+                <li><a href="<?php echo $menuItem['path']; ?>?theme=<?php echo $theme; ?>"><?php echo $menuItem['name']; ?></a></li>
+            <?php endforeach; ?>
+            <li>
+                <a href="?theme=<?php echo $theme === 'dark' ? 'light' : 'dark'; ?>" class="theme-toggle">
+                    Switch to <?php echo $theme === 'dark' ? 'Light' : 'Dark'; ?> Theme
+                </a>
+            </li>
         </ul>
-        <a class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
             <i class="fa fa-bars"></i>
-        </a>
+        </button>
     </nav>
 </header>

@@ -21,7 +21,7 @@
                     <h1>Portfólio</h1>
                 </div>
             </section>
-              <section class="container">
+              <section class="container <?php echo $theme; ?>">
                 <?php finishPortfolio();?>
             </section>   
 

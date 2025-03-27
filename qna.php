@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="sk">
+<?php
+$theme = isset($_GET['theme']) && $_GET['theme'] === 'dark' ? 'dark' : 'light';
+?>
+<html lang="sk" class="<?php echo $theme; ?>">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,38 +13,34 @@
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="<?php echo $theme; ?>">
 <?php include_once 'parts/nav.php'?>
 
-  <main>
-    <section class="banner">
-      <div class="container text-white">
-        <h1>Q&A</h1>
-      </div>
-    </section>
-    <section class="container">
-      <div class="row">
-        <div class="col-100 text-center">
-          <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em></strong></p>
+  <main class="<?php echo $theme; ?>">
+      <section class="banner <?php echo $theme; ?>">
+        <div class="container">
+          <h1>Q&A</h1>
         </div>
-      </div>
-    </section>
-      <section class="container">
+      </section>
+      <section class="container <?php echo $theme; ?>">
+        <div class="row">
+          <div class="col-100 text-center">
+            <p class="<?php echo $theme; ?>"><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em></strong></p>
+          </div>
+        </div>
+      </section>
+      <section class="container <?php echo $theme; ?>">
         <?php
         include("q.php");
         for($i = 0; $i < count($q); $i++){
-          echo '<div class="accordion">
+          echo '<div class="accordion ' . $theme . '">
             <div class="question">' . $q[$i] . '</div>
             <div class="answer">' . $a[$i] . '</div>
           </div>';
         }
-        
-        
         ?>
-    </section>
-    </section>
-  </div>
-  </main>
+      </section>
+    </main>
   <?php include_once 'parts/footer.php'; ?>
 
 <script src="js/accordion.js"></script>

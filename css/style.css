@@ -5,6 +5,181 @@
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.light a {
+  color: blue;
+}
+
+
+body.light p {
+  color: black;
+  background-color: white;
+}
+
+
+body.dark p {
+  color: white;
+
+}
+
+footer a.light {
+  color: black;
+
+}
+
+
+footer a.dark {
+  color: white;
+  background-color: #121212;
+  
+}
+
+header.light, .container.light {
+  background-color: white;
+  color: black;
+}
+
+header.dark, .container.dark {
+  background-color: #333;
+  color: white;
+}
+
+header.light .main-menu li a {
+  color: black; 
+}
+
+
+header.dark .main-menu li a {
+  color: white;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark a {
+  color: lightblue;
+}
+
+header, footer {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+  display: inline-block;
+  margin-left: 20px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+
+main.light {
+  background-color: white;
+  color: black;
+}
+
+.banner.light {
+  background-color: #f0f0f0;
+}
+
+.banner.light h1 {
+  color: #333; 
+}
+
+.container.light {
+  background-color: white;
+}
+
+.accordion.light .question {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.accordion.light .answer {
+  background-color: white;
+  color: #333;
+}
+
+
+main.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.banner.dark {
+  background-color: #333; 
+}
+
+.banner.dark h1 {
+  color: white; 
+}
+
+.container.dark {
+  background-color: #121212;
+}
+
+.accordion.dark .question {
+  background-color: #333;
+  color: white;
+}
+
+.accordion.dark .answer {
+  background-color: #222;
+  color: white;
+}
+
+
+form.light input[type="text"],
+form.light input[type="email"],
+form.light textarea {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+form.light input[type="submit"] {
+  background-color: #0066cc;
+  color: white;
+}
+
+form.light label {
+  color: #333;
+}
+
+
+form.dark input[type="text"],
+form.dark input[type="email"],
+form.dark textarea {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+form.dark input[type="submit"] {
+  background-color: #0099ff;
+  color: white;
+}
+
+form.dark label {
+  color: white;
+}
+
+
+.banner.light h1 {
+  color: #333;
+}
+
+.banner.dark h1 {
+  color: white;
+}
+
 /*ŠTÝLY PRE FONTY*/
 h1{
   font-size:60px;
