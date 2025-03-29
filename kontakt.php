@@ -40,7 +40,7 @@ $theme = isset($_GET['theme']) && $_GET['theme'] === 'dark' ? 'dark' : 'light';
         </div>
         <div class="col-50 text-right">
           <h3>Napíšte nám</h3>
-          <form id="contact" class="<?php echo $theme; ?>" method="POST" action="db/database.php">
+          <form id="contact" class="<?php echo $theme; ?>" method="POST" action="classes/spracFormulara.php">
             <input type="text" placeholder="Vaše meno" id="meno" name="meno" class="<?php echo $theme; ?>" required><br>
             <input type="email" placeholder="Váš email" id="email" name="email" class="<?php echo $theme; ?>" required><br>
             <textarea placeholder="Vaša správa" id="sprava" name="sprava" class="<?php echo $theme; ?>"></textarea><br>
