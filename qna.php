@@ -1,7 +1,20 @@
 <!DOCTYPE html>
+
+
 <?php
+require_once 'classes/QnA.php';
+use otazkyodpovede\QnA;
+
 $theme = isset($_GET['theme']) && $_GET['theme'] === 'dark' ? 'dark' : 'light';
+
+$qna = new QnA();
+$qnaData = $qna->getAllQuestionsAndAnswers();
+
+
+
 ?>
+
+
 <html lang="sk" class="<?php echo $theme; ?>">
 <head>
     <meta charset="UTF-8">
@@ -31,11 +44,10 @@ $theme = isset($_GET['theme']) && $_GET['theme'] === 'dark' ? 'dark' : 'light';
       </section>
       <section class="container <?php echo $theme; ?>">
         <?php
-        include("q.php");
-        for($i = 0; $i < count($q); $i++){
+        foreach ($qnaData as $row) {
           echo '<div class="accordion ' . $theme . '">
-            <div class="question">' . $q[$i] . '</div>
-            <div class="answer">' . $a[$i] . '</div>
+            <div class="question">' . htmlspecialchars($row['otazka']) . '</div>
+            <div class="answer">' . htmlspecialchars($row['odpoved']) . '</div>
           </div>';
         }
         ?>

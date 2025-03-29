@@ -1,0 +1,16 @@
+{
+    "otazky": [
+        "first q",
+        "second q",
+        "third q",
+        "fourth q",
+        "fifth q"
+    ],
+    "odpovede": [
+        "first a",
+        "second a",
+        "third a",
+        "fourth a",
+        "fifth a"
+    ]
+}
